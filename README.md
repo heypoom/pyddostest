@@ -4,7 +4,7 @@ Hi! This is a little python script I created to test the multiprocessing and soc
 
 ## EDUCATIONAL USAGE ONLY!
 
-This script is created for python 3 educational usage only. Any usage further than education are not recommended. I, phoomparin, are not liable for any damages caused. Use at your own risk.
+This script is created for Python 3 educational usage only. Any usage further than education are not recommended. I, phoomparin, am not liable for any damages caused. Use at your own risk.
 
 ## MIT LICENSE
 
