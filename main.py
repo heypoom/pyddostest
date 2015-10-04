@@ -25,7 +25,7 @@ THE SOFTWARE.
 '''
 
 import requests, os, sys, string, socket, threading, math, multiprocessing
-import hanging_threads
+#import hanging_threads
 
 def flood(url, msg, rate, inst, port):
 	try:
